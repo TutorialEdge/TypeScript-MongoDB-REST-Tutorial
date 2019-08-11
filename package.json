@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "watch-ts": "tsc -w",
+    "watch-node": "nodemon dist/app.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\""
+  },
   "dependencies": {
     "@types/express": "^4.17.0",
     "@types/mongoose": "^5.5.12",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.9"
   }

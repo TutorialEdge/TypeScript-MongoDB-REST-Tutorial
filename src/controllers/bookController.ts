@@ -51,11 +51,14 @@ export let updateBook = (req: Request, res: Response) => {
 
 export let addBook = (req: Request, res: Response) => {
     var book = new Book(req.body);
-
+    console.log(req.body);
+    console.log(book);
     book.save((err: any) => {
         if (err) {
+            console.log(err)
             res.send(err);
         } else {
+            console.log(book);
             res.send(book);
         }
     });
